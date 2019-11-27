@@ -1,0 +1,48 @@
+/* ==========================================================================
+   function类，清除浮动功能，手势功能。。。
+   ========================================================================== */
+
+/**  
+  * 直接写到html里的类，一般我只用f-pointer和f-clearfix，来加个手势和清除下浮动
+  * 其他类名尽量写到scss文件里面，html文件一定要看上去干净，同时做到语义化
+*/
+.f-table,
+.f-cell {
+  @extend %full;
+}
+
+.f-full {
+  width: 100%;
+  height: 100%;
+}
+
+.f-table {
+  display: table;
+  table-layout: fixed;
+  max-width: 100%;
+}
+
+.f-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.f-bgcover {
+  background: no-repeat center center / cover;
+}
+
+.f-none {
+  display: none;
+}
+
+.f-clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.f-pointer {
+  cursor: pointer;
+}

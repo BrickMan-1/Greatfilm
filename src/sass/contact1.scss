@@ -1,0 +1,104 @@
+.contact1{
+	.grid{
+		width: 1680px;
+		margin: 0 auto 80px;
+		text-align: center;
+		font-size: 0;
+		@include maxScreenWidth(1679){
+			width: 100%;
+			padding: 0 50px;
+			box-sizing: border-box;
+		}
+		@include mobile{
+			width: 100%;
+			padding: 0 15px;
+			box-sizing: border-box;
+			margin-bottom: 50px;
+		}
+		.grid-item{
+			display: inline-block;
+			margin: 0 15px 85px;
+			@include mobile{
+				margin-bottom: 35px;
+			}
+			@include maxScreenWidth(375){
+				margin: 0 0 35px;
+			}
+			.imgbox{
+				img{
+					filter: grayscale(100%);
+					transition: all .5s;
+					cursor: pointer;
+					&:hover{
+						filter: grayscale(0%);
+						transition: all .5s;
+					}
+				}
+			}
+			.text{
+				padding-top: 20px;
+				font-size: 14px;
+				line-height: 1;
+				color: #000;
+				@extend %Wr;
+			}
+		}
+	}
+	.wapAlertBox{
+		display: none;
+		position: fixed;
+		z-index: 999999;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background-color: #f8f8f8;
+		.close{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			cursor: pointer;
+			z-index: 10;
+			@include pc{
+				&:hover{
+					img{
+						transform: rotateZ(90deg);
+						transform-origin: 50%;
+						transition: all .5s ease;
+					}
+				}
+			}
+			img{
+				width: 60%;
+				margin-top: 8px;
+				transition: all .5s ease;
+			}
+		}
+		.content{
+			position: absolute;
+			box-sizing: border-box;
+			width: 100%;
+			height: 85%;
+			left: 0;
+			top: 0;
+			padding: 15% 15% 0;
+			overflow: auto;
+			.imgbox{
+				text-align: center;
+				margin-bottom: 30px;
+				p{
+					padding-top: 15px;
+				}
+			}
+			.desc{
+				padding: 0 6px;
+				text-align: justify;
+				color: #444444;
+				line-height: 28px;
+			}
+		}
+	}
+}

@@ -1,0 +1,395 @@
+.works{
+	.head-banner-wrapper{
+		position: relative;
+		overflow: hidden;
+		.bgBox{
+			@include mobile{
+				position: relative;
+				height: 280px;
+				overflow: hidden;
+			}
+			@include betweenScreenWidth(572,991){
+				height: auto;
+			}
+			img{
+				width: 100%;
+				@include mobile{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: auto;
+					height: 100%;
+					transform: translate(-50%,-50%);
+				}
+				@include betweenScreenWidth(572,991){
+					position: static;
+					width: 100%;
+					height: auto;
+					transform: none;
+				}
+			}
+		}
+		.textBox{
+			@extend %c-abs;
+			color: #ffffff;
+			.info{
+				text-align: center;
+				.type{
+					margin-right: 38px;
+					@include mobile{
+						width: 90px;
+						margin-right: 22px;
+					}
+						&+img{
+							margin-top: 3px;
+							@include mobile{
+								width: 45px;
+								margin-top: 2px;
+							}
+						}
+				}
+				+p{
+					margin-top: 60px;
+					font-size: 80px;
+					text-align: center;
+					@extend %Ar;
+					@include mobile{
+						font-size: 40px;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+		.goDown-wrapper{
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			width: 20px;
+			height: 70px;
+			margin-left: -10px;
+			cursor: pointer;
+			.goDown{
+				position: absolute;
+				left: 50%;
+				bottom: 40px;
+				margin-left: -1.5px;
+				width: 3px;
+				height: 30px;
+				background-color: #fff;
+				@include animation(my-scroll2 6s infinite ease);
+				&:after{
+					content: '';
+					position: absolute;
+					width: 1px;
+					height: 40px;
+					left: 1px;
+					top: 30px;
+					background-color: #737373;
+				}
+			}
+		}
+	}
+	.second-content-wrapper{
+		padding-top: 100px;
+		background-color: #000000;
+		@include mobile{
+			padding-top: 45px;
+		}
+		.mid{
+			width: 1680px;
+			margin: 0 auto;
+			@include maxScreenWidth(1679){
+				width: 100%;
+				padding: 0 50px;
+				box-sizing: border-box;
+			}
+			@include betweenScreenWidth(991,1180){
+				padding: 5px;
+			}
+			@include mobile{
+				width: 100%;
+				padding: 0 15px;
+			}
+			.top-wrapper{
+				.left{
+					float: left;
+					line-height: 1;
+					@include maxScreenWidth(1385){
+						float: none;
+					}
+					span{
+						position: relative;
+						top: -5px;
+						display: inline-block;
+						background-color: #fff;
+						width: 40px;
+						height: 1px;
+					}
+					img{
+						display: inline-block;
+						margin-left: 20px;
+						vertical-align: middle;
+
+					}
+					.searchbox{
+						display: inline-block;
+						margin-left: 50px;
+						background-color: transparent;
+						cursor: pointer;
+						@include maxScreenWidth(529){
+							margin-left: 0;
+						}
+						&.active{
+							border-bottom: 1px solid #ffffff;
+							transition: all .5s ease;
+							input{
+								width: 220px;
+								transition: all .5s ease;
+							}
+						}
+						input{
+							color: #ffffff;
+							border: none;
+							outline: none;
+							background-color: transparent;
+							width: 0;
+							height: 36px;
+							text-indent: 15px;
+							transition: all .5s ease;
+						}
+						i{
+							color: #ffffff;
+						}
+					}
+				}
+
+				.right{
+					float: right;
+					@include maxScreenWidth(1385){
+						float: none;
+						margin-top: 40px;
+					}
+					ul{
+						li{
+							position: relative;
+							float: left;
+							padding: 10px 10px;
+							font-size: 14px;
+							line-height: 1;
+							border-bottom: 1px solid transparent;
+							cursor: pointer;
+							&:first-child{
+								margin-left: 0;
+							}
+							@include mobile{
+								margin: 0 7px;
+								padding: 10px 0;
+
+							}
+							&.active{
+								border-bottom-color: #ffffff;
+								.cn{
+									opacity: 1;
+								}
+								.en{
+									opacity: 0;
+								}
+							}
+							&:hover{
+								border-bottom-color: #ffffff;
+								transition: opacity .3s;
+								.cn{
+									opacity: 1;
+									transition: opacity .3s;
+								}
+								.en{
+									opacity: 0;
+									transition: opacity .3s;
+								}
+							}
+							.cn{
+								position: absolute;
+								top: 10px;
+								left: 0;
+								width: 100%;
+								text-align: center;
+								opacity: 0;
+								color: #ffffff;
+								transition: opacity .3s;
+								@extend %Wr;
+								@include mobile{
+									position: static;
+									opacity: 1;
+								}
+							}
+							.en{
+								color: rgba(#fff,.7);
+								@extend %Ar;
+								transition: opacity .3s;
+								@include mobile{
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+			.infolist{
+				padding-bottom: 170px;
+				@include mobile{
+					padding-top: 30px;
+					padding-bottom: 50px;
+				}
+				#video-list-wrapper{
+					position: relative;
+					.video-unit{
+						box-sizing: border-box;
+						&:nth-child(1){
+							animation-delay: .1s;
+						}
+						&:nth-child(2){
+							animation-delay: .2s;
+						}
+						&:nth-child(3){
+							animation-delay: .3s;
+						}
+						&:nth-child(4){
+							animation-delay: .4s;
+						}
+						@include mobile{
+							width: 100%;
+							margin-bottom: 50px;
+							&:last-child{
+								margin-bottom: 0;
+							}
+						}
+						@include pc{
+							float: left;
+							width: 50%;
+							padding-right: 20px;
+							margin-bottom: 20px;
+							margin-top: 30px;
+							&:nth-child(2n){
+								padding-right: 0px;
+								padding-left: 20px;
+							}
+						}
+						//@include betweenScreenWidth(383,991){
+						//	float: left;
+						//	width: 50%;
+						//	padding-right: 10px;
+						//	margin-bottom: 10px;
+						//	margin-top: 65px;
+						//	&:nth-child(2n){
+						//		padding-right: 0px;
+						//		padding-left: 10px;
+						//	}
+						//}
+						&:hover{
+							.titlebox{
+								//color: red;
+							}
+						}
+						.picbox {
+							position: relative;
+							z-index: 10;
+							opacity: 1;
+							visibility: visible;
+							@include mobile{
+
+							}
+							@include transition(all .8s);
+							&:after{
+								position: absolute;
+								content:'';
+								left: 0;
+								top: 0;
+								width: 100%;
+								height: 100%;
+								background-color: rgba(#000,0);
+								transition: all .5s ease;
+								z-index: 98;
+							}
+							&:hover{
+								&:after{
+									background-color: rgba(#000,.5);
+									transition: all .5s ease;
+								}
+							}
+							img {
+								width: 100%;
+							}
+							.ImgContent{
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 100%;
+								z-index: 2;
+							}
+							.ctrlBtn{
+								position: absolute;
+								left: 50%;
+								top: 50%;
+								-webkit-transform: translate(-50%, -50%);
+								transform: translate(-50%, -50%);
+								text-align: center;
+								background-color: #000;
+								border-radius: 50%;
+								z-index: 99;
+								cursor: pointer;
+								&:hover{
+									i{
+										background-color: #000;
+										color: #ffffff;
+										transition: all .5s ease;
+									}
+								}
+								i{
+									font-size: 34px;
+									background-color: #ffffff;
+									padding: 20px 15px 20px 25px;
+									border-radius: 50%;
+									transition: all .5s ease;
+									@include mobile{
+										font-size: 20px;
+										padding: 10px 7px 10px 13px;
+									}
+								}
+							}
+						}
+						.titlebox{
+							padding-top: 30px;
+							.tit{
+								float: left;
+								line-height: 1;
+								font-size: 16px;
+								color: #ffffff;
+								@extend %Wr;
+							}
+							.addtime{
+								float: right;
+								line-height: 19px;
+								font-size: 12px;
+								color: rgba(#fff,.4);
+							}
+							.morevideo{
+								float: right;
+								line-height: 16px;
+								color: #616161;
+								font-size: 12px;
+								cursor: pointer;
+									span{
+										position: relative;
+										font-size: 20px;
+										top: 2px;
+									}
+
+							}
+						}
+					}
+
+				}
+			}
+		}
+	}
+}

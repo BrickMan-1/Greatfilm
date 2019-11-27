@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="works">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="短视频制作,短视频商业营销推广,艺人输送,网红达人线下活动,网红直播商业营销推广,广告片,商业片,企业宣传片,纪录片,婚礼电影,活动策划,新品发布,商业演绎,大影视官网,三瞳网络,朗彩星模特经纪" />
+	<meta name="description" content="大影视自成立以来，在广告片、商业片、企业宣传片、纪录片、婚礼电影、活动策划、新品发布、商业演绎方面积累了丰富的专业经验和强大的媒体资源。2015年，大影视 正式进军小视频制作领域，成立视频铺子专项部门，整合电商团队的营销理念以及视频制作的技术实力，与多家电商品牌合作，制定电商运营全套方案，精准定位电商品牌 价值，以及制作营销短视频，成功实现客流量增长，流量转化购买率平均增长50%以上。" />
+	<meta name="author" content="技术支持：雨飞设计www.yfd.com.cn" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<!--[if lt IE 9]>
+	<script>window.location.href = './oldbrowse/oldbrowse.html'</script><![endif]-->
+	<!--[if lt IE 9]>     <script>window.location.href = './oldbrowse/oldbrowse.html'</script><![endif]-->     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./assets/image/yfd-icon-iphone.png" />
+	<!--iPhone  150x150 像素-->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/image/yfd-icon-ipad.png" />
+	<!--iPad  300x300 像素-->
+	<title>大影视——打造中国纪录影像领域卓越的创导品牌</title>
+</head>
+
+<body>
+<header class="g-header j-g-header"></header>
+
+<div class="m-loading"></div>
+
+<div class="m-goTop"></div>
+
+<main class="g-content">
+	<div class="head-banner-wrapper">
+		<div class="bgBox" id="bgBox">
+			<script id="bgBoxTmp" type="text/html">
+				<img class="BannerImg" src='{{imgUrl}}' alt="">
+			</script>
+		</div>
+		<!--<div class="textBox">-->
+			<!--<p class="info">-->
+				<!--<img src="./assets/image/greatfilm1.png" alt="" class="type">-->
+				<!---->
+				<!--<img src="./assets/image/形状1.png" alt="">-->
+			<!--</p>-->
+			<!--<p>Our works</p>-->
+		<!--</div>-->
+		<div class="goDown-wrapper">
+			<div class="goDown"></div>
+		</div>
+	</div>
+
+	<div class="second-content-wrapper an1 animated" data-animated="fadeIn">
+		<div class="mid">
+			<div class="top-wrapper clearfix">
+				<div class="left">
+					<span></span>
+					<img src="./assets/image/Ourworks.png" alt="">
+					<div class="searchbox">
+						<input type="text">
+						<i class="iconfont icon-search"></i>
+					</div>
+				</div>
+				<div class="right">
+					<ul class="clearfix">
+						<li data-id="59" data-cid="198" class="active">
+							<span class="cn">精选视频</span>
+							<span class="en">Featured Videos</span>
+						</li>
+						<li data-id="89" data-cid="197">
+							<span class="cn">宣传片</span>
+							<span class="en">Propaganda Film</span>
+						</li>
+						<li data-id="88" data-cid="196">
+							<span class="cn">活动片</span>
+							<span class="en">Active Film</span>
+						</li>
+						<li data-id="87" data-cid="195">
+							<span class="cn">短视频</span>
+							<span class="en">Short Video</span>
+						</li>
+						<li data-id="86" data-cid="194">
+							<span class="cn">广告</span>
+							<span class="en">Advertisement</span>
+						</li>
+						<li data-id="85" data-cid="193">
+							<span class="cn">微电影</span>
+							<span class="en">Microfilm</span>
+						</li>
+					
+					</ul>
+				</div>
+			</div>
+			<div class="infolist">
+				<ul id="video-list-wrapper" class="clearfix fadeInUp animated">
+					<script id="video-list-wrapper-tmp" type="text/html">
+						{{each list e}}
+						<li class="video-unit">
+							<div class="wv-inner" data-mp4={{e.video_src}}>
+								<div class="picbox">
+									<img src="./assets/image/logobg.png" alt="">
+									<img class="ImgContent" src={{e.img_url}} alt={{e.title}}>
+									<div class="ctrlBtn">
+										<i class="iconfont icon-play2"></i>
+									</div>
+								</div>
+								<div class="titlebox clearfix">
+									<div class="tit">{{e.title}}</div>
+									{{if e.filter === "置顶"}}
+									<div class="morevideo" data-id={{e.categoryId}}><span>+</span> 更多视频</div>
+									{{else}}
+									<div class="addtime">{{e.addtime}}</div>
+									{{/if}}
+								</div>
+							</div>
+						</li>
+						{{/each}}
+					</script>
+				</ul>
+
+				<!--playBox wap-->
+				<div class="playerbox">
+					<div class="player">
+						<div class="player-hd">
+							<div class="player-close"></div>
+						</div>
+						<div class="player-bd">
+							<video controls></video>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<footer class="g-footer j-g-footer"></footer>
+
+<script src="./api/artTemplate.js"></script>
+</body>
+
+</html>

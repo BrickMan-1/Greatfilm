@@ -1,0 +1,53 @@
+.contact2{
+	.grid{
+		width: 1430px;
+		margin: 0 auto 65px;
+		@include maxScreenWidth(1430){
+			width: 100%;
+		}
+		@include mobile{
+			width: 100%;
+			//padding: 0 15px;
+			margin-bottom: 50px;
+			box-sizing: border-box;
+		}
+		.grid-item{
+			float: left;
+			width: 16.6%;
+			margin-bottom:25px;
+			&:nth-child(6n+1){
+				animation-delay: .1s;
+			}
+			&:nth-child(6n+2){
+				animation-delay: .2s;
+			}
+			&:nth-child(6n+3){
+				animation-delay: .3s;
+			}
+			&:nth-child(6n+4){
+				animation-delay: .5s;
+			}
+			&:nth-child(6n+5){
+				animation-delay: .5s;
+			}
+			&:nth-child(6n+6){
+				animation-delay: .6s;
+			}
+
+			@include mobile{
+				float: left;
+				width: 50%;
+			}
+			@include betweenScreenWidth(572,991){
+				width: 33.3%;
+			}
+			.imgbox{
+				position: relative;
+				height: 115px;
+				img{
+					@extend %c-abs;
+				}
+			}
+		}
+	}
+}

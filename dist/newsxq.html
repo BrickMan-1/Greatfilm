@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="newsdetails">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="短视频制作,短视频商业营销推广,艺人输送,网红达人线下活动,网红直播商业营销推广,广告片,商业片,企业宣传片,纪录片,婚礼电影,活动策划,新品发布,商业演绎,大影视官网,三瞳网络,朗彩星模特经纪" />
+	<meta name="description" content="大影视自成立以来，在广告片、商业片、企业宣传片、纪录片、婚礼电影、活动策划、新品发布、商业演绎方面积累了丰富的专业经验和强大的媒体资源。2015年，大影视 正式进军小视频制作领域，成立视频铺子专项部门，整合电商团队的营销理念以及视频制作的技术实力，与多家电商品牌合作，制定电商运营全套方案，精准定位电商品牌 价值，以及制作营销短视频，成功实现客流量增长，流量转化购买率平均增长50%以上。" />
+	<meta name="author" content="技术支持：雨飞设计www.yfd.com.cn" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	/>
+	<!--[if lt IE 9]>
+	<script>window.location.href = './oldbrowse/oldbrowse.html'</script><![endif]-->
+	<!--[if lt IE 9]>     <script>window.location.href = './oldbrowse/oldbrowse.html'</script><![endif]-->     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./assets/image/yfd-icon-iphone.png" />
+	<!--iPhone  150x150 像素-->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/image/yfd-icon-ipad.png" />
+	<!--iPad  300x300 像素-->
+	<title>大影视——打造中国纪录影像领域卓越的创导品牌</title>
+<link href="./css/layout.css" rel="stylesheet"></head>
+
+<body>
+<div class="m-loading j-m-loading "></div>
+
+
+<main class="g-content">
+	<!-- 新闻详情页 -->
+	<div class="casexq_box">
+		<div class="casexq_close">
+			<a href="javascript:window.close()" class="pc_news_close_a">
+				<i class="iconfont icon-close"></i>
+			</a>
+			<a href="javascript:history.go(-1)" class="wap_news_close_a">
+				<i class="iconfont icon-close"></i>
+			</a>
+		</div>
+		<div class="casexq_listbox">
+			<ul class="casexq_list" id="casexq_listbox">
+				<script id="casexq_lists" type="text/html">
+					<li>
+						<p class="casexq_name">{{list.title}}</p>
+					</li>
+					<li>
+						<p class="casexq_time">{{list.addtime}}</p>
+					</li>
+					<li class="content_box">
+						{{@ content}}
+					</li>
+				</script>
+			</ul>
+			<div class="share">
+				<i class="iconfont icon-share1 f-pointer"></i>
+				<div class="bdsharebuttonbox">
+					<a id="fenxiang" href="#" class="bds_more" data-cmd="more"></a>
+				</div>
+				<script>
+					window._bd_share_config = {
+						"common": {
+							"bdSnsKey": {},
+							"bdText": "",
+							"bdMini": "3",
+							"bdMiniList": false,
+							"bdPic": "",
+							"bdStyle": "0",
+							"bdSize": "16"
+						},
+						"share": {}
+
+					};
+					with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script'))
+						.src =
+						'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-
+							new Date() / 36e5)
+						];
+				</script>
+			</div>
+			<div class="nav" id="j-nav">
+				<script id="j-nav-tmp" type="text/html">
+					<a href="newsdetails.html?id={{list.preid}}" class="pre f-pointer">
+						上一篇：<span>{{list.prtitle}}</span>
+					</a>
+					<a href="newsdetails.html?id={{list.nextid}}" class="next f-pointer">
+						下一篇：<span>{{list.nexttitle}}</span>
+					</a>
+				</script>
+			</div>
+		</div>
+	</div>
+</main>
+<div class="back2top">
+	<i class="iconfont icon-top"></i>
+</div>
+<script src="./api/artTemplate.js "></script>
+<script type="text/javascript" src="./js/vendor.js"></script><script type="text/javascript" src="./js/newsxq.js"></script></body>
+
+</html>

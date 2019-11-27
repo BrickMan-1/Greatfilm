@@ -1,0 +1,119 @@
+.fs_gallery {
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+@media screen and (max-width: 1060px) {
+    .fs_gallery {
+        display: none !important;
+    }
+}
+.fs_gallery_close {
+    position: absolute; 
+    top: 40px; 
+    right: 40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 102;
+    background: url(../../assets/image/icons/cls.png) center center no-repeat;
+    transition:0.5s; -o-transition:0.5s; -ms-transition:0.5s; -moz-transition:0.5s; -webkit-transition:0.5s; 
+}
+
+.fs_gallery_close:hover {
+    transform: rotate(180deg);
+	transform-origin: 50%;
+}
+
+.fs_gallery_prev, .fs_gallery_next {
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    width: 50px;
+    height: 80px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 101;
+	background-repeat: no-repeat;
+	background-position: center center;
+    transition:0.5s; -o-transition:0.5s; -ms-transition:0.5s; -moz-transition:0.5s; -webkit-transition:0.5s; 
+}
+
+.fs_gallery_prev {
+    left: 30px;
+	background-image: url(../../assets/image/icons/lft.png);
+
+}
+.fs_gallery_next {
+    right: 30px;
+	background-image: url(../../assets/image/icons/rt.png);
+
+}
+.fs_gallery_prev:hover{
+	background-color: rgba(0,0,0,.5);
+}
+.fs_gallery_next:hover{
+	background-color: rgba(0,0,0,.5);
+}
+
+
+.fs_gallery_shuft {
+    position: relative;
+    width: 9999999px;
+
+}
+
+
+.fs_gallery_shuft:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.fs_gallery_shuft_item {
+    float: left;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.fs_gallery_content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1060px;
+    height: 640px;
+    transform: translate(-50%,-50%);
+	background-color: #fff;
+}
+.fs_gallery_left{
+    float: left;
+	margin-left: 94px;
+	margin-top: 77px;
+	cursor: pointer;
+}
+.fs_gallery_right{
+
+}
+.fs_gallery_content .right_title{
+	position: absolute;
+	top: 442px;
+	left: 128px;
+}
+.fs_gallery_right .right_text{
+	position:absolute;
+	top: 83px;
+	right:94px;
+	width: 570px;
+	color: #000000;
+	font-size: 14px;
+	line-height: 30px;
+	font-family: "Microsoft YaHei";
+}
+
+
+
+

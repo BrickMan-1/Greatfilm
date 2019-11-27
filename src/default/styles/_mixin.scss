@@ -1,0 +1,236 @@
+/**
+ * _mixin.scss
+ * @author rmchen
+ * @version 1.0
+ * Created: 18-06-25
+ * @description 带参数scss代码片段，至于为什么要用%处理不带参数片段，
+ * 用@mixin处理带参数的片段，直接官看网介绍吧https://www.sass.hk/docs/#t7-3-6
+ */
+@keyframes my-scroll1 {
+    0%{bottom:60px}
+    25%{bottom:70px}
+    50%{bottom:60px}
+    75%{bottom:50px}
+    100%{bottom:60px}
+}
+@keyframes my-scroll2 {
+    0%{bottom:40px}
+    50%{bottom:20px}
+    100%{bottom:40px}
+}
+@keyframes line-scale1 {
+    0%{
+        transform: scaleY(1);}
+    50%{
+        transform: scaleY(.5);}
+    100%{
+       transform:scaleY(1);}
+}
+// animation动画
+@mixin animation($value: none) {
+    @include prefix(animation, $value);
+}
+// webkit多行文本溢出省略号...
+@mixin multiEllipsis($n: 3, $width: 100px) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $n;
+    overflow: hidden;
+    width: $width;
+}
+
+//单行文本溢出。。。
+@mixin ellipsis($width: 100px) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: $width;
+}
+
+// 关键帧动画
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+//垂直对齐方式
+@mixin vertical-align($align: middle) {
+    display: inline-block;
+    vertical-align: $align;
+}
+
+//统一过渡效果
+@mixin transition($c: all, $time: 0.3s, $fn: ease) {
+    transition: $c $time $fn;
+}
+
+// transform变换
+@mixin transform($value) {
+    @include prefix(transform, $value);
+}
+// 添加浏览器前缀
+@mixin prefix($attr, $value, $prefixs: webkit moz ms o) {
+    @each $item in $prefixs {
+        -#{$item}-#{$attr}: $value;
+    }
+    #{$attr}: $value;
+}
+
+/* 媒体查询 start*/
+
+// 媒体查询最大宽度( width <= $width )
+@mixin maxScreenWidth($width) {
+    @media screen and (max-width: $width + px) {
+        @content;
+    }
+}
+
+// 媒体查询最小宽度( width >= $width )
+@mixin minScreenWidth($width) {
+    @media screen and (min-width: $width + px) {
+        @content;
+    }
+}
+
+// 媒体查询最宽度处于大最小值之间（ $min <= width <= $max ）
+@mixin betweenScreenWidth($min, $max) {
+    @media screen and (min-width: $min + px) and (max-width: $max + px) {
+        @content;
+    }
+}
+
+// 媒体查询大屏幕（ width >= 1200px ）
+@mixin lgScreen {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+// 媒体查询中等屏幕，平板（ 992px <= width <= 1199px ）
+@mixin mdScreen {
+    @media screen and (min-width: 992px) and (max-width: 1190px) {
+        @content;
+    }
+    @media screen and (min-width: 1200px) and (max-width: 1380px) {
+        @content;
+    }
+}
+
+// 媒体查询小屏幕（ 768px <= width <= 991px ）
+@mixin smScreen {
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+// 媒体查询超小屏幕（ 767px <= width ）
+@mixin xsScreen {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+// 媒体查询PC端（ width >= 992px ）
+@mixin pc {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+// 媒体查询移动端（ width <= 991px ）
+@mixin mobile {
+    @media screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+/* 媒体查询 end*/
+
+// hover
+@mixin hover {
+    @include pc {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+// hover or active
+@mixin hoverOrActive {
+    &.active {
+        @content;
+    }
+    @include hover {
+        @content;
+    }
+}
+
+@mixin c-text($line-height: 28px) {
+    line-height: $line-height;
+    text-align: center;
+}
+
+/* 各个方向箭头 strat*/
+
+@mixin arrows-bottom($px: 4px, $color: #000) {
+    border-top: $px solid $color;
+    border-bottom: $px solid transparent;
+    border-right: $px solid transparent;
+    border-left: $px solid transparent;
+}
+
+@mixin arrows-right($px: 4px, $color: #000) {
+    border-top: $px solid transparent;
+    border-bottom: $px solid transparent;
+    border-right: $px solid transparent;
+    border-left: $px solid $color;
+}
+
+@mixin arrows-left($px: 4px, $color: #000) {
+    border-top: $px solid transparent;
+    border-bottom: $px solid transparent;
+    border-right: $px solid $color;
+    border-left: $px solid transparent;
+}
+
+@mixin arrows-top($px: 4px, $color: #000) {
+    border-top: $px solid transparent;
+    border-bottom: $px solid $color;
+    border-right: $px solid transparent;
+    border-left: $px solid transparent;
+}
+
+/* 各个方向箭头 end*/
+
+/* 按钮 start*/
+
+@mixin button( $width: 70px, $height: 28px, $color: #be9541, $border-radius: 4px) {
+    width: $width;
+    height: $height;
+    line-height: $height;
+    text-align: center;
+    background-color: $color;
+    border-radius: $border-radius;
+}
+
+/* 按钮 end */
+
+// 遮罩层
+@mixin mask($opacticy: 0.4, $bg-color: #000) {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    background-color: $bg-color;
+    opacity: $opacticy;
+}
+
+/* 测试用(编辑器会高亮这个属性，好找，方便修改) */
+
+@mixin test($color: yellow) {
+    background-color: $color;
+}

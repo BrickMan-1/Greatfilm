@@ -1,0 +1,327 @@
+.setmeal1{
+	.head-banner{
+		@include mobile{
+			position: relative;
+			height: 280px;
+			overflow: hidden;
+		}
+		@include betweenScreenWidth(572,991){
+			height: auto;
+		}
+		img{
+			width: 100%;
+			@include mobile{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: auto;
+				height: 100%;
+				transform: translate(-50%,-50%);
+			}
+			@include betweenScreenWidth(572,991){
+				position: static;
+				width: 100%;
+				height: auto;
+				transform: none;
+			}
+		}
+	}
+	.second-content-wrapper{
+		.mid{
+			width: 1680px;
+			padding: 0 90px;
+			box-sizing: border-box;
+			margin: 0 auto;
+			@include maxScreenWidth(1679){
+				width: 100%;
+				padding: 0 50px;
+			}
+			@include mobile{
+				width: 100%;
+				padding: 0 15px;
+			}
+			&>ul{
+				&>li{
+					float: left;
+					width: 33.3%;
+					height: 340px;
+					border: 1px solid #d7d7d7;
+					padding: 80px 0 0 110px;
+					background-color: #fff;
+					color: rgba(#000,.5);
+					box-sizing: border-box;
+					cursor: pointer;
+					transition: all .5s ease;
+					&:nth-child(1){
+						animation-delay: .4s;
+					}
+					&:nth-child(2){
+						animation-delay: .5s;
+					}
+					&:nth-child(3){
+						animation-delay: .6s;
+					}
+					@include maxScreenWidth(1679){
+						padding: 80px 0 0 2%;
+					}
+					@include mobile{
+						float: none;
+						width: 100%;
+						height: auto;
+						padding: 30px;
+					}
+					&.active{
+						background-color: #000;
+						color: rgba(#fff,.5);
+						border: none;
+						.tit-wrapper{
+							span{
+								color: #fff;
+							}
+						}
+					}
+					&:nth-child(2){
+						&>ul{
+							li{
+								margin: 0 40px 22px 0;
+								@include mobile {
+									margin: 0 40px 10px 0;
+								}
+								&:nth-child(2n){
+									margin-right: 0;
+								}
+							}
+						}
+					}
+					.tit-wrapper{
+						width: 310px;
+						@include mobile{
+							width: 270px;
+						}
+						span{
+							float: left;
+							font-size: 24px;
+							line-height: 34px;
+							color: #000;
+							@include mobile {
+								font-size: 20px;
+								line-height: 28px;
+							}
+							@extend %Wr;
+							transition: all .5s ease;
+						}
+						i{
+							float: right;
+							font-size: 34px;
+							color: #ffffff;
+							line-height: 1;
+							@include maxScreenWidth(1679){
+								margin-right: 6%;
+							}
+						}
+					}
+					&>ul{
+						width: 300px;
+						margin-top: 63px;
+						@include mobile {
+							margin-top: 33px;
+						}
+						li{
+							float: left;
+							margin: 0 64px 22px 0;
+							@include mobile {
+								margin: 0 44px 10px 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.third-content-wrapper{
+		animation-delay: .7s;
+		.mid{
+			width: 1680px;
+			padding: 0 90px;
+			box-sizing: border-box;
+			margin: 110px auto 200px;
+			@include maxScreenWidth(1679){
+				width: 100%;
+				padding: 0 50px;
+			}
+			@include mobile{
+				width: 100%;
+				padding: 0;
+				margin: 45px 0 50px;
+			}
+			.top-wrapper{
+
+				@include mobile{
+					padding: 0 15px;
+					box-sizing: border-box;
+				}
+				.left{
+					float: left;
+					line-height: 1;
+					padding-top: 10.5px;
+					@include mdScreen{
+						padding: 20px 0;
+					}
+					@include mobile{
+						float: none;
+						padding-top: 0;
+					}
+					span{
+						position: relative;
+						top: -5px;
+						display: inline-block;
+						background-color: #000;
+						width: 40px;
+						height: 1px;
+					}
+					img{
+						display: inline-block;
+						margin-left: 20px;
+					}
+				}
+				.right{
+					float: right;
+					@include mobile{
+						float: none;
+						margin-top: 30px;
+					}
+					ul{
+						position: relative;
+						li{
+							position: relative;
+							float: left;
+							padding: 7px 20px;
+							font-size: 14px;
+							color: #444444;
+							line-height: 1;
+							cursor: pointer;
+							transition: all .3s;
+							&.active{
+								color: #fff;
+								//background-color: #000;
+							}
+							&:hover{
+								//color: #fff;
+								//background-color: #000;
+								transition: all .3s;
+							}
+						}
+					}
+				}
+			}
+			.info-wrapper{
+				position: relative;
+				padding: 150px;
+				margin-top: 72px;
+				background-image: url("../assets/image/tchbg.jpg");
+				background-size: 100% auto;
+				background-position: center center;
+				background-repeat: no-repeat;
+				@include mdScreen{
+					padding: 80px 15px;
+					margin: 20px 0;
+				}
+				@include mobile{
+					padding: 30px 15px;
+					margin: 30px 15px;
+					background-size: auto 100%;
+				}
+				.inner{
+					width: 1000px;
+					margin: 0 auto;
+					overflow: hidden;
+					@include mdScreen{
+						width: 600px;
+					}
+					@include mobile{
+						width: 100%;
+					}
+					ul{
+						width: 15000px;
+						li{
+							float: left;
+							width: 1000px;
+							text-align: center;
+							@extend %Wr;
+							h3{
+								font-size: 18px;
+								color: #ffffff;
+								font-weight: 700;
+								line-height: 36px;
+								margin-bottom: 41px;
+								span{
+									font-size: 16px;
+									font-weight: 200;
+									text-decoration: line-through;
+								}
+							}
+							.count{
+								font-size: 14px;
+								color: rgba(#fff,.4);
+								margin-bottom: 20px;
+								line-height: 1;
+							}
+							.desc{
+								color: #fefefe;
+								font-size: 14px;
+								margin-bottom: 40px;
+								line-height: 1;
+							}
+							.xq{
+								color: #fefefe;
+								font-size: 14px;
+								margin-bottom: 20px;
+								line-height: 1;
+							}
+							.detail{
+								color: rgba(#fff,.6);
+								font-size: 14px;
+								line-height: 28px;
+							}
+						}
+					}
+					.leftEar,.rightEar{
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						cursor: pointer;
+
+						@include mobile{
+							display: none;
+						}
+						i{
+							display: inline-block;
+							width: 50px;
+							height: 80px;
+							line-height: 80px;
+							text-align: center;
+							font-size: 72px;
+							color: #565656;
+							&:hover{
+								color:#fff;
+							}
+						}
+					}
+					.leftEar{
+						left: 150px;
+						@include mdScreen{
+							left: 50px;
+						}
+					}
+					.rightEar{
+						right: 150px;
+						@include mdScreen{
+							right: 50px;
+						}
+					}
+				}
+
+			}
+		}
+	}
+}

@@ -1,0 +1,191 @@
+.newsdetails{
+	.pc_news_close_a{
+		display: none !important;
+		@include minScreenWidth(769){
+			display: block !important;
+		}
+	}
+	.wap_news_close_a{
+		display: none !important;
+		@include maxScreenWidth(768){
+			display: block !important;
+		}
+	}
+	body{
+		padding: 0;
+	}
+	.g-content{
+		padding: 0;
+	}
+	.casexq_box{
+		text-align: center;
+		background-color: #f5f5f5;
+		.casexq_close {
+			@media screen and (max-width: 991px){
+				position: fixed;
+				top: 10px;
+				right: 10px;
+				z-index: 99;
+			}
+			@media screen and (min-width: 992px) and (max-width: 1199px){
+				width: 80%;
+				position: fixed;
+				top: 50px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			@media screen and (min-width: 1200px){
+				width: 1150px;
+				position: fixed;
+				top: 100px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			a {
+				@include maxScreenWidth(991){
+					width: 30px;
+					height: 30px;
+				}
+				@include betweenScreenWidth(992,1199){
+					width: 46px;
+					height: 46px;
+					position: absolute;
+					right: -60px;
+				}
+				@include minScreenWidth(1200){
+					width: 46px;
+					height: 46px;
+					position: absolute;
+					right: -27px;
+				}
+				display: inline-block;
+				background-color: #000000;
+				i{
+					@include maxScreenWidth(991){
+						width: 30px;
+						height: 30px;
+						font-size: 20px;
+					}
+					@include betweenScreenWidth(992,1199){
+						width: 46px;
+						height: 46px;
+						font-size: 30px;
+					}
+					@include minScreenWidth(1199){
+						width: 46px;
+						height: 46px;
+						font-size: 30px;
+					};
+					position: absolute;
+					left: 0px;
+					color: #ffffff;
+					transition: all .3s;
+					&:hover{
+						transform: rotate(90deg);
+					}
+				}
+			}
+		}
+		.casexq_listbox {
+			@include maxScreenWidth(1199) {
+				width: 96%;
+				padding: 50px 2%;
+			}
+			@include betweenScreenWidth(992,1199){
+				width: 80%;
+				padding: 50px 12px;
+			}
+			@include minScreenWidth(1200) {
+				width: 950px;
+				padding: 100px 80px;
+			}
+			background-color: #fff;
+			display: inline-block;
+			position: relative;
+			min-height: 800px;
+			.content_box {
+				text-align: left;
+				padding-bottom: 50px;
+			}
+			.casexq_list {
+				.casexq_details {
+					text-align: left;
+					li {
+						margin: 5px 0;
+					}
+				}
+				.casexq_name {
+					@include maxScreenWidth(768){
+						font-size: 18px;
+					}
+					@include minScreenWidth(769){
+						font-size: 28px;
+					}
+				}
+				.casexq_time {
+					margin: 2% 0 3% 0;
+				}
+				.casexq_introduce {
+					margin-top: 3%;
+					text-align: left;
+					img {
+						margin: 5% 0;
+					}
+				}
+				img {
+					margin: 2% 0;
+					width: 100%;
+				}
+			}
+			.nav {
+				position: relative;
+
+				.pre {
+					text-align: left;
+					padding-bottom: 6px;
+					display: block;
+				}
+				.next {
+					text-align: left;
+					padding-bottom: 10px;
+					display: block;
+				}
+				.pre,.next{
+					font-size: 16px;
+					color:#666;
+					span{
+						color:#000;
+						position: relative;
+						&:before{
+							width: 0%;
+							height: 1px;
+							content: "";
+							background:rgba(0,0,0,1);
+							position: absolute;
+							left: 50%;
+							bottom: -3px;
+							transform: translateX(-50%);
+							transition: all .3s ease 0s;
+						}
+					}
+					&:hover span:before{
+						width: 100%;
+					}
+				}
+			}
+			.share {
+				position: relative;
+				text-align: left;
+				i {
+					font-size: 20px;
+				}
+				.bdsharebuttonbox {
+					position: absolute;
+					left: 0;
+					top: 0;
+					opacity: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,308 @@
+.footer-wrapper{
+	background-color: #0e1421;
+	padding: 100px 0 0;
+	@include mobile{
+		padding:50px 0 0;
+		overflow: hidden;
+	}
+	.ContactAndFormBox{
+		max-width: 1384px;
+		margin: 0 auto;
+		padding:0 15px 60px;
+		@extend %clearfix;
+		.ContactBox{
+			float: left;
+			width: 50%;
+			@include maxScreenWidth(991){
+				float: none;
+				width: 100%;
+			}
+			h1{
+				margin:0 0 30px;
+				font-size: 30px;
+				color: #ffffff;
+				@include maxScreenWidth(768){
+					font-size: 24px;
+					margin:0 0 12px;
+				}
+			}
+			p{
+				margin-bottom: 22px;
+				color: #ffffff;
+				opacity: .7;
+				@include maxScreenWidth(768){
+					margin-bottom: 12px;
+				}
+			}
+			.txt{
+				div{
+					display: inline-block;
+					line-height: 22px;
+					min-width: 160px;
+					margin-bottom: 16px;
+					color: #ffffff;
+					opacity: .7;
+				}
+			}
+		}
+
+		.FormBox{
+			float: right;
+			width: 50%;
+			@include maxScreenWidth(991){
+				float: none;
+				width: 100%;
+			}
+			h1{
+				font-size: 24px;
+				margin: 0;
+				opacity: .7;
+				color: #ffffff;
+				@include maxScreenWidth(768){
+					font-size: 18px;
+				}
+			}
+			p{
+				opacity: .7;
+				padding-left: 32px;
+				color: #ffffff;
+				position: relative;
+				&:after{
+					content: '';
+					width: 27px;
+					height: 1px;
+					background-color: rgba(255,255,255,.7);
+					position: absolute;
+					top: 10px;
+					left: 0;
+				}
+			}
+			.InputText{
+				margin-top: 20px;
+				@extend %clearfix;
+				.name,.email{
+					float: left;
+					width: calc(50% - 10px);
+					height: 40px;
+					line-height: 40px;
+					border: none;
+					border-bottom: 1px solid #575b64;
+					background-color: transparent;
+					color: #fff;
+					@include maxScreenWidth(768){
+						float: none;
+						width: 100%;
+					}
+				}
+				.email{
+					float: right;
+					@include maxScreenWidth(768){
+						float: none;
+						margin: 12px 0;
+					}
+				}
+			}
+			.Mag{
+				width: 100%;
+				border: 1px solid #575b64;
+				background-color: transparent;
+				color: #fff;
+			}
+			.MagTitle{
+				padding: 26px 0 12px;
+				font-size: 12px;
+				font-weight: bold;
+				color: #fff;
+				opacity: .7;
+				@include maxScreenWidth(768){
+					padding: 12px 0;
+				}
+			}
+			.Btn{
+				width: 180px;
+				height: 42px;
+				line-height: 42px;
+				margin-top: 20px;
+				text-align: center;
+				background-color: #878a90;
+				font-size: 12px;
+				color: #fff;
+				cursor: pointer;
+				&:hover{
+					color: #000;
+					background-color: #fff;
+				}
+			}
+			::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+				color: #fff;
+				opacity: .7;
+				font-weight: bold;
+			}
+			::-moz-placeholder { /* Firefox 19+ */
+				color: #fff;
+				opacity: .7;
+				font-weight: bold;
+			}
+			:-ms-input-placeholder { /* IE 10+ */
+				color: #fff;
+				opacity: .7;
+				font-weight: bold;
+			}
+			:-moz-placeholder { /* Firefox 18- */
+				color: #fff;
+				opacity: .7;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.copyright{
+		background-color: #000000;
+		.left{
+			float: left;
+			margin-left: 120px;
+			padding: 41px 0;
+			color: rgba(#fff,.6);
+			font-size: 12px;
+			line-height: 1;
+			@include mobile{
+				margin-left: 15px;
+				width: 230px;
+				padding: 15px 0;
+				line-height: 18px;
+				color: #999;
+			}
+			a{
+				color: rgba(#fff,.6);
+				&:hover{
+					color: rgba(#fff,1);
+					text-decoration: underline;
+				}
+				@include mobile{
+					color: #b8b8b8;
+				}
+			}
+		}
+		.right{
+			float: right;
+			margin-right: 120px;
+			padding: 32px 0;
+			@include mobile{
+				margin-right: 15px;
+				padding: 15px 0;
+			}
+			i{
+				font-size: 22px;
+				color: rgba(#fff,.6);
+				cursor: pointer;
+				@include mobile{
+					color: #b8b8b8;
+				}
+				&.icon-weixin{
+					position: relative;
+				}
+				&.icon-weixin:after{
+					content: '';
+					position: absolute;
+					width: 121px;
+					height: 121px;
+					background-image: url('../assets/image/weixin.jpg');
+					background-repeat: no-repeat;
+					left: -102px;
+					bottom: 21px;
+					z-index: 999;
+					transform: scale(0);
+					transition: transform 0.3s;
+				}
+				&.icon-weixin:hover{
+					&:after{
+						transform: scale(1);
+						transition: transform 0.3s;
+					}
+				}
+				&.icon-weibo{
+					margin-right: 22px;
+				}
+				&:hover{
+					color: rgba(#fff,1);
+				}
+			}
+		}
+	}
+
+	//.email{
+	//	background-color: #0e1421;
+	//	padding-top: 124px;
+	//	padding-bottom: 157px;
+	//	@include mobile{
+	//		padding:50px 15px 0;
+	//		overflow: hidden;
+	//	}
+	//	.imgbox{
+	//		text-align: center;
+	//		margin-bottom: 76px;
+	//		.icon-bottom-logo{
+	//			font-size:60px;
+	//			line-height: 60px;
+	//			color:#fff;
+	//		}
+	//		@include mobile{
+	//			float: left;
+	//			margin-bottom: 0;
+	//		}
+	//	}
+	//	.desc{
+	//		//font-family: "方正兰亭纤黑简体";
+	//		font-size: 28px;
+	//		line-height: 40px;
+	//		color: #ffffff;
+	//		margin-bottom: 50px;
+	//		text-align: center;
+	//		@include mobile{
+	//			float: right;
+	//			width: 230px;
+	//			font-size: 14px;
+	//			line-height: 28px;
+	//			margin-bottom: 10px;
+	//			text-align: left;
+	//			margin-top: -7px;
+	//		}
+	//	}
+	//	.input-cnt{
+	//		position: relative;
+	//		margin: 0 auto;
+	//		width: 650px;
+	//		padding-bottom: 10px;
+	//		border-bottom: 2px solid #ffffff;
+	//		@include mobile{
+	//			width: 100%;
+	//			float: left;
+	//		}
+	//		input{
+	//			display: block;
+	//			width: 100%;
+	//			height: 45px;
+	//			line-height: 45px;
+	//			text-indent: 90px;
+	//			border: none;
+	//			outline: none;
+	//			background-color: transparent;
+	//			color: #ffffff;
+	//			@include mobile{
+	//				text-indent: 15px;
+	//			}
+	//		}
+	//		i{
+	//			position: absolute;
+	//			color: #ffffff;
+	//			right: 90px;
+	//			top: 5px;
+	//			font-size: 23px;
+	//			cursor: pointer;
+	//			@include mobile{
+	//				right: 15px;
+	//			}
+	//		}
+	//	}
+	//}
+}

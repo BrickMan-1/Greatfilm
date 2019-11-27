@@ -1,0 +1,136 @@
+/**
+ * _extend.scss
+ * @author rmchen
+ * @version 1.0
+ * Created: 18-06-25
+ * @description scss代码片段，至于为什么要用%处理不带参数片段，
+ * 用@mixin处理带参数的片段，直接官看网介绍吧https://www.sass.hk/docs/#t7-3-6
+ */
+%picbox{
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    img{
+        display: block;
+        width: 100%;
+    }
+}
+%ellipsis {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+%full {
+    width: 100%;
+    height: 100%;
+}
+
+%clearfix {
+    &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        clear: both;
+    }
+}
+
+%unselect {
+    user-select: none;
+}
+
+%table {
+    display: table;
+    box-sizing: border-box;
+    table-layout: fixed;
+}
+
+%cell {
+    display: table-cell;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+}
+
+%bgcover {
+    background: no-repeat center center / cover;
+}
+
+%hidden {
+    visibility: hidden;
+}
+
+/* 各种垂直水平居中 */
+
+%c-table {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+%c-abs {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%c-mar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+%c-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%c-ib {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 水平居中 */
+
+%hc-abs {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+//指定元素宽度
+%hc-mar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//父类要指定text-align: center;
+%hc-ib {
+    display: inline-block;
+}
+
+/* 垂直居中 */
+
+%vc-abs {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//指定元素高度
+%vc-mar {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+%Wr{
+    font-family: "Microsoft YaHei";
+}
+%Ar{
+    font-family: Arial;
+}
